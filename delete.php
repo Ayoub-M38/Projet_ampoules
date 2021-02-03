@@ -13,7 +13,13 @@ $delete->bindParam(1, $id);
 $delete->execute();
 */
 
-$statment = $pdo->prepare('DELETE FROM ampoules WHERE id_ampoule= :id')
+// BindValue Instead of the bindParam
+
+$id = $_GET['id_delete'];
+
+$statement = $pdo->prepare('DELETE FROM ampoules WHERE id_ampoule = :id_delete');
+$statement->bindValue(':id_delete', $id);
+$statement->execute();
 
 header('location: index.php');
 
