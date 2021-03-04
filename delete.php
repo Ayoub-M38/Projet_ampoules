@@ -21,7 +21,7 @@ $statement = $pdo->prepare('DELETE FROM ampoules WHERE id_ampoule = :id_delete')
 $statement->bindValue(':id_delete', $id);
 $statement->execute();
 
-header('location: index.php');
+header('location: list.php');
 
 
 
